@@ -1,0 +1,179 @@
+/**e84c3d红色 **/
+* {
+		margin:0 auto;
+		padding:0 auto;
+}
+body {
+		background:#f9f9f9;
+}
+a {
+		color:#666666;
+}
+a:link {
+		color:#666666;
+}
+a:hover {
+		color:#e84c3d;
+}
+nav {
+		font-weight:bold;
+		height:100px;
+		background:#fff;
+}
+.navContent {
+		margin-top:20px;
+}
+.header {
+		height:400px;
+		background-image:url('/image/top4.jpg');
+		background-repeat:no-repeat;
+		background-size:100%;
+}
+article {
+		margin-top:10px;
+}
+.footer {
+		height:200px;
+		background:#fff;
+}
+/*
+ * dashboard
+ */
+#article table tr td:first-child {
+		width:50px;
+		text-align:center;
+}
+
+/** umeditor **/
+.edui-container {
+		width:790px;
+		border:1px solid #ccc;
+		margin-bottom:5px;
+}
+/**
+ * masonry
+ */
+.masonry {
+		padding: 20px;
+}
+.box {
+		margin-bottom: 20px;
+		float: left;
+		width: 245px;
+		background:#f1f1f1;
+		border:1px solid #ccc;
+}
+.box img {
+		max-width: 100%
+}
+.pak {
+		padding:2px 10px;
+}
+/**
+ * 图片页面
+ */
+.pic {
+		position:fixed;
+		width:100%;
+		height:100%;
+		background:#000;
+		z-index:9999;
+		opacity:0.95;
+}
+.pic a:link {
+		color:#fff;
+}
+.picBody .right{
+		opacity:1;
+}
+.picBody .right img {
+		display:block;
+		margin-top:200px;
+		max-height:700px;
+}
+.picBody .right {
+}
+.picBody .left {
+		background:#fff;
+}
+
+#commentArea img,#comment img {
+		border-radius:50%;
+		width:64px;
+		height:auto;
+}
+/**
+ * 首页
+ */
+.main {
+}
+.main .col-md-7 {
+		height:400px;
+}
+.main .col-md-7 img {
+		width:100%;
+		height:400px;
+}
+.main .col-md-5 {
+		height:400px;
+}
+.main .col-md-5 img {
+		width:120px;
+		height:120px;
+}
+.main .col-md-12 img {
+		width:80px;
+		height:80px;
+}
+.blank {
+		height:400px;
+		background:#f1f1f1;
+}
+.secondary img {
+		width:40px;
+		height:40px;
+		border-radius:50%;
+}
+/**
+ * single文章页
+ */
+.single {
+		background:#fff;
+		border:1px solid #d6e9c6;
+		margin-bottom:10px;
+}
+.singleComment {
+		margin:0 10px;
+		margin-bottom:10px;
+}
+/**
+ * 广告
+ */
+.adsBig {
+		height:100px;
+		background:#fff;
+		border:1px solid #ccc;
+		margin-bottom:10px;
+}
+.adsMiddle {
+		height:100px;
+		background:#fff;
+		border:1px solid #ccc;
+		margin-bottom:10px;
+}
+.adsSmall {
+		height:240px;
+		background:#fff;
+		border:1px solid #ccc;
+		margin-bottom:10px;
+}
+/**
+ * fixed
+ */
+.panel {
+		margin-bottom:10px;
+}
+.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+		padding:0 5px;
+}
+

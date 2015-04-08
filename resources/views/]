@@ -1,0 +1,25 @@
+<?php namespace App\Model;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\Model;
+
+class Post extends Model {
+
+	//
+	protected $table='posts';  
+	protected $fillable=['title','content','category','tag','author','state'];  
+	/*
+	 * 获取文章标题及日期
+	 * id 用户id
+	 */
+	private static function  getPostTitle($id)
+	{
+			$post=DB::table('posts')
+					->leftJoin('users','posts.author','=','users.id')
+					->select('title','create_at')
+					->where('author',$id)
+					->orderBy('id','desc')
+					->get();
+			return $post;
+	}
+
+}
