@@ -45,10 +45,10 @@ class MainController extends Controller {
 				$user=User::all()->slice(0,5);
 				$data=array();
 				$temp=array();
-			foreach($this->post as $value){
-					$value->img=MyBaseController::getImage(stripslashes($value->content));
-					$value->tag=explode(',',$value->tag);
-			}
+				foreach($this->post as $value){
+						$value->img=MyBaseController::getImage(stripslashes($value->content));
+						$value->tag=explode(',',$value->tag);
+				}
 				$data['ajax']=0;
 				$data['post']=$this->post;
 				$data['userId']=$this->userId;
@@ -56,7 +56,7 @@ class MainController extends Controller {
 				return view('index',$data);
 		}
 		/**
-		 * 过去文章页
+		 * 获取文章页
 		 * $id 文章id
 		 */
 		public function getSingle($id)

@@ -16,7 +16,7 @@ AT.field | 首页
 				</ol>
 				<div class='singleiTitle'>
 						<h2 class='text-center'><?php echo $post->title;?></h2>
-						<p><a href='#'><?php echo $post->nickname;?></a> 发布于 <?php echo $post->created_at;?></p>
+						<p><a href='#'><img src='<?php echo $post->avatar;?>'/><?php echo $post->nickname;?></a> 发布于 <?php echo $post->created_at;?></p>
 				</div>
 				<div class='singleMain'>
 						<p><?php echo $post->content;?></p>

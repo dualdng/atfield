@@ -26,7 +26,7 @@ class Post extends Model {
 			$post=DB::table('posts')
 					->leftJoin('users','posts.author','=','users.id')
 					->leftJoin('categorys','posts.category','=','categorys.id')
-					->select('posts.id','posts.title','users.nickname as nickname','posts.content','posts.tag','categorys.name as categoryName','posts.created_at')
+					->select('posts.id','posts.title','users.nickname as nickname','users.avatar','posts.content','posts.tag','categorys.name as categoryName','posts.created_at')
 					->where('posts.state','1')
 					->orderBy('posts.id','desc')
 					->get();
