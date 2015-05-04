@@ -4,6 +4,11 @@ AT.field | 首页
 @endsection
 @section('header')
 <div class='header container-fluid'>
+<div class="jumbotron">
+  <h2>AT.Field club</h2>
+  <p>打造面向绝对领域爱好者的精品社区</p>
+  <p><a class="btn btn-primary btn-lg" href="/auth/register" role="button">赶快加入吧</a></p>
+</div>
 </div>
 @endsection
 @section('content')
@@ -20,7 +25,6 @@ AT.field | 首页
 		});
 </script>
 
-<div class='container'>
 		<div class='col-md-9 main'>
 				<div class='col-md-7'>
 						<div id='carousel-example-generic' class='carousel slide' data-ride='carousel'>
@@ -68,10 +72,8 @@ AT.field | 首页
 								</div>
 								<div class='panel-body'>
 										<ul class="list-group">
-												<?php foreach($post as $key=>$value) {?>
-												<?php if($key<5){?>
+												<?php foreach($postA as $key=>$value) {?>
 												<li class="list-group-item"><a href='/single/<?php echo $value->id;?>'><?php echo $value->title;?></a></li>
-												<?php }?>
 												<?php }?>
 										</ul>
 								</div>
@@ -83,8 +85,7 @@ AT.field | 首页
 										<h2 class='panel-title'>最新文章</h2>
 								</div>
 								<div class='panel-body'>
-										<?php foreach($post as $key=>$value) {?>
-										<?php if($key<5){?>
+										<?php foreach($postB as $key=>$value) {?>
 										<div class="media">
 												<div class="media-left media-middle">
 														<a href="#">
@@ -96,79 +97,98 @@ AT.field | 首页
 												</div>
 										</div>
 										<?php }?>
-										<?php }?>
 								</div>
 						</div>
 				</div>
 		</div>
 		<div class='col-md-3 secondary'> 
-				<div class='panel panel-success'>
-						<div class='panel-heading'>
-								<h2 class='panel-title'>加入我们</h2>
-						</div>
-						<div class='panel-body'>
-								<a class='btn btn-default' href='/auth/login' title='#'>登录</a>
-								还没帐号？赶紧 <a  href='/auth/resiter' title='#'>注册</a>
-						</div>
-				</div>
-				<div class='adsSmall'>
-						<!--广告-->
-				</div>
-				<div class='panel panel-success'>
-						<div class='panel-heading'>
-								<h2 class='panel-title'>最新会员</h2>
-						</div>
-						<div class='panel-body'>
-										<?php foreach($user as $value) {?>
-										<div class="media">
-												<div class="media-left media-middle">
-														<a href="/dashboard/<?php echo $value->id;?>">
-																<img class="media-object" src="<?php echo $value->avatar;?>" alt="...">
-														</a>
-												</div>
-												<div class="media-body">
-													<?php echo $value->name;?>
-												</div>
-										</div>
-										<?php }?>
-						</div>
-				</div>
-				<div class='panel panel-success'>
-						<div class='panel-heading'>
-								<h2 class='panel-title'>统计数据</h2>
-						</div>
-						<div class='panel-body'>
-								<ul class="list-group">
-										<li class="list-group-item">
-										<span class="badge">14</span>
-										运行时间
-										
-										</li>
-								</ul>
-						</div>
-				</div>
 		</div>
 		<div class='col-md-12 adsBig'>
 		</div>
-		<div class='col-md-12'>
+		<div class='col-md-12 picA'>
+				<div class='panel panel-success'>
+						<div class='panel-heading'>
+								<h2 class='panel-title'>二次元图片</h2>
+						</div>
+						<div class='panel-body'>
+								<?php foreach($postD as $value){?>
+								<div class='col-md-2'>
+										<img src='<?php echo $value->img;?>'/>
+								</div>
+								<?php }?>
+						</div>
+				</div>
+		</div>
+		<div class='col-md-12 fourth'>
+				<div class='col-md-6'>
+						<div class='panel panel-success'>
+								<div class='panel-heading'>
+										<h2 class='panel-title'>袜子</h2>
+								</div>
+								<div class='panel-body'>
+										<?php foreach($postE as $value){?>
+										<div class="media">
+												<div class="media-left media-middle">
+														<a href="#">
+																<img class="media-object imgEight" src="<?php echo $value->img;?>" alt="...">
+														</a>
+												</div>
+												<div class="media-body">
+														<a href='/single/<?php echo $value->id;?>'><?php echo $value->title;?></a>
+												</div>
+										</div>
+										<?php }?>
+								</div>
+						</div>
+				</div>
+				<div class='col-md-6'>
+						<div class='panel panel-success'>
+								<div class='panel-heading'>
+										<h2 class='panel-title'>旧番</h2>
+								</div>
+								<div class='panel-body'>
+										<?php foreach($postF as $value){?>
+										<div class="media">
+												<div class="media-left media-middle">
+														<a href="#">
+																<img class="media-object imgEight" src="<?php echo $value->img;?>" alt="...">
+														</a>
+												</div>
+												<div class="media-body">
+														<a href='/single/<?php echo $value->id;?>'><?php echo $value->title;?></a>
+												</div>
+										</div>
+										<?php }?>
+								</div>
+						</div>
+				</div>
+
+		</div>
+
+		<div class='col-md-12 hotPic'>
 				<div class='panel panel-success'>
 						<div class='panel-heading'>
 								<h2 class='panel-title'>热门图片</h2>
 						</div>
 						<div class='panel-body'>
-								<div id='masonry'>
-										<?php foreach($post as $key=>$value) {?>
-										<?php if($key<10){?>
-										<div class='box'>
-												<img src='<?php echo $value->img;?>'/>
+								<div class='col-md-3'>
+										<img src='<?php echo $postC[0]->imgUrl;?>'/>
+								</div>
+								<div class='col-md-9'>
+										<?php foreach($postC as $key=>$value){?>
+										<div class='col-md-3'>
+												<img src='<?php echo $value->imgUrl;?>'/>
 										</div>
-										<?php }?>
 										<?php }?>
 								</div>
 						</div>
 				</div>
 		</div>
+		<script>
+				$(function(){
+						getSide();
+				})
+		</script>
 
-</div>
 @endsection
 

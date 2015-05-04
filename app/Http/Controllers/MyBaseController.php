@@ -36,6 +36,28 @@ class MyBaseController extends Controller {
 					return 'null';
 			}
 		}
+		/**
+		 * 获取文章所有图片的地址
+		 */
+		public static function getAllImageUrl($content)
+		{
+			$pattern='/<img src[=\"a-z0-9:\.\/]*/';
+			$result=preg_match_all($pattern,$content,$match);
+			$temp=array();
+			if($result) {
+					foreach($match[0] as $value) {
+							$pattern='/u[a-z0-9.\/]+/';
+							$result=preg_match($pattern,$value,$matchB);
+							if($result==1){
+									$temp[]='/'.$matchB[0];
+							}
+					}
+					return $temp;
+
+			}else {
+					return 'null';
+			}
+		}
 
 		/**
 		 * 标签合辑
@@ -142,5 +164,8 @@ class MyBaseController extends Controller {
 				$line=file_get_contents($url,true);
 				return json_decode($line,true);
 		}
+		/**
+		 *分页
+		 **/
 }
 

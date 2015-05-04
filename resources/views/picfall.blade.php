@@ -3,7 +3,7 @@
 AT.field | 首页 
 @endsection
 @section('header')
-<div class='header container-fluid'>
+<div class='headerNarrow container-fluid'>
 </div>
 @endsection
 @section('content')
@@ -46,29 +46,26 @@ AT.field | 首页
 						?>
 				</div>
 				<div id='masonry' class='masonry'>
-						<?php foreach($post as $value){ ?>
+						<?php foreach($pic as $key=>$value){ ?>
 						<?php $tag=explode(',',$value->tag); ?>
-						<?php $content=$value->content;
-						$a=count($content);
-						for($i=0;$i<$a;$i++) {?>
-						<?php $pattern='/u[a-z0-9.\/]+/';
-						$result=preg_match($pattern,$content[$i],$match);
-						?>
 						<div class='box'>
-								<a href='/pic/<?php echo $value->id;?>/<?php echo $i;?>'><?php echo $content[$i].'/>';?></a>
+								<a class='ajax' href='/pic/<?php echo $key;?>'><img src='<?php echo $value->imgUrl;?>'/></a>
 								<div class='pak'> 
 										<p>
 										<?php foreach($tag as $values) {?>
 										<span class='label label-success'><a href='#' title='#'><?php echo $values;?></a></span>
 										<?php }?>
 										</p>
-										<span><a href='#' title='#'><?php echo $value->nickname;?></a> 收录在 <a href='#' title='#'><?php echo $value->categoryName;?></a></span>
-										<p><?php echo $value->title;?></p>
+										<span><a href='/dashboard/<?php echo $value->usersId;?>' title='#'><?php echo $value->nickname;?></a> 收录在 <a href='#' title='#'><?php echo $value->name;?></a></span>
 								</div>
 						</div>
 						<?php }?>
-						<?php }?>
 				</div>
+<?php if($pageNum!=1){?>
+<div class='text-center loadMore'>
+<a class='btn btn-success' href='/picfall?page=<?php echo $page+1;?>'>加载更多</a>
+</div>
+<?php }?>
 		</div>
 		<div class='col-md-3'>
 

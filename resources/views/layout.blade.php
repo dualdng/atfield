@@ -1,3 +1,9 @@
+<?php 
+/**
+ * $ajax 判断是否是ajax请求数据 1 是 0 否
+ * $isLogin 判断用户是否登录 1 是 0 否
+ */
+?>
 <?php if($ajax==0){?>
 <!DOCTYPE html>
 <html>
@@ -15,8 +21,8 @@
 				<!-- 可选的Bootstrap主题文件（一般不用引入） -->
 				<link rel="stylesheet" href="/bootstrap/css/bootstrap-theme.min.css">
 
-				<link rel="stylesheet" href="/css/main.css">
 				<link rel='stylesheet' href='/umeditor/themes/default/css/umeditor.css'>
+				<link rel="stylesheet" href="/css/main.css">
 
 				<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
 				<script src="/js/jquery-2.1.0.min.js"></script>
@@ -30,53 +36,6 @@
 				<script src="/umeditor/umeditor.config.js"></script>
 		</head>
 		<body>
-				<nav class="navbar navbar-fixed-top">
-				<div class="navContent container">
-						<!-- Brand and toggle get grouped for better mobile display -->
-						<div class="navbar-header">
-								<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-										<span class="sr-only">Toggle navigation</span>
-										<span class="icon-bar"></span>
-										<span class="icon-bar"></span>
-										<span class="icon-bar"></span>
-								</button>
-								<a class="navbar-brand" href="#">Brand</a>
-						</div>
-
-						<!-- Collect the nav links, forms, and other content for toggling -->
-						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-								<ul class="nav navbar-nav">
-										<li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-										<li><a href="#">Link</a></li>
-										<li class="dropdown">
-										<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-										<ul class="dropdown-menu" role="menu">
-												<li><a href="#">Action</a></li>
-												<li><a href="#">Another action</a></li>
-												<li><a href="#">Something else here</a></li>
-												<li class="divider"></li>
-												<li><a href="#">Separated link</a></li>
-												<li class="divider"></li>
-												<li><a href="#">One more separated link</a></li>
-										</ul>
-										</li>
-								</ul>
-								<ul class="nav navbar-nav navbar-right">
-										<li><a href="#">登录</a></li>
-										<li class="dropdown">
-										<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-										<ul class="dropdown-menu" role="menu">
-												<li><a href="#">Action</a></li>
-												<li><a href="#">Another action</a></li>
-												<li><a href="#">Something else here</a></li>
-												<li class="divider"></li>
-												<li><a href="#">Separated link</a></li>
-										</ul>
-										</li>
-								</ul>
-						</div><!-- /.navbar-collapse -->
-				</div><!-- /.container-fluid -->
-				</nav>
 				<header>
 				@yield('header')
 				</header>
@@ -86,43 +45,46 @@
 				<?php if($ajax==0){?>
 				</article>
 				<footer>
+<div id='scrollUp' style='display:none'><a href='javascript:scrollUp();'><span class='glyphicon glyphicon-plane'></span></a></div>
 				<div class='footer container-fluid'>
 						<div class='container'>
 								<div class='row'>
 										<div class='col-md-3'>
 												<h4>关于网站</h4>
-												<p><a href='#'>测试链接</a></p>
-												<p><a href='#'>测试链接</a></p>
-												<p><a href='#'>测试链接</a></p>
-												<p><a href='#'>测试链接</a></p>
-												<p><a href='#'>测试链接</a></p>
-												<p><a href='#'>测试链接</a></p>
+												<p><a href='/any/1'>关于本站</a></p>
+												<p><a href='/4'>广告投放</a></p>
 										</div>
 										<div class='col-md-3'>
 												<h4>常用链接</h4>
-												<p><a href='#'>测试链接</a></p>
-												<p><a href='#'>测试链接</a></p>
-												<p><a href='#'>测试链接</a></p>
-												<p><a href='#'>测试链接</a></p>
-												<p><a href='#'>测试链接</a></p>
-										</div>
-										<div class='col-md-3'>
-												<h4>关注我们</h4>
-												<p><a href='#'>测试链接</a></p>
-												<p><a href='#'>测试链接</a></p>
+												<p><a href='#'>百度</a></p>
+												<p><a href='#'>网站建设</a></p>
 										</div>
 										<div class='col-md-3'>
 												<h4>内容许可</h4>
-												<p><a href='#'>测试链接</a></p>
-												<p><a href='#'>测试链接</a></p>
-												<p><a href='#'>测试链接</a></p>
-												<p><a href='#'>测试链接</a></p>
+												<p><a href='/any/3'>版权申明</a></p>
+												<p><a href='/any/2'>用户须知</a></p>
+										</div>
+
+										<div class='col-md-3'>
+												<h4>联系我们</h4>
+												<address>
+														<strong><a href='/any/5'>AT.Field</a></strong><br>
+														<abbr title="MailTo">MailTo:</abbr><a href="mailto:#">admin@atfield.club</a>
+												</address>
+
 										</div>
 								</div>
 						</div>
 
 				</div>
+<!--百度分享-->
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"3","bdPos":"left","bdTop":"100"},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
 				@yield('footer')
+<script>
+$(function(){
+		getNav();
+})
+</script>
 				</footer>
 		</body>
 </html>

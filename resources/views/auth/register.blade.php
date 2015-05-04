@@ -1,65 +1,70 @@
-@extends('app')
-
+@extends('layout')
+@section('title')
+注册 | AT.field 
+@endsection
+@section('header')
+<div class='headerNarrow container-fluid'>
+</div>
 @section('content')
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
+		<div class="col-md-8 col-md-offset-2 register">
 			<div class="panel panel-default">
-				<div class="panel-heading">Register</div>
+				<div class="panel-heading">注册帐号</div>
 				<div class="panel-body">
-					@if (count($errors) > 0)
-						<div class="alert alert-danger">
-							<strong>Whoops!</strong> There were some problems with your input.<br><br>
-							<ul>
-								@foreach ($errors->all() as $error)
-									<li>{{ $error }}</li>
-								@endforeach
-							</ul>
-						</div>
-					@endif
-
-					<form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/register') }}">
+						<img src='/image/logo.png'/>
+						<?php if($isLogin==0){?>
+					<form id='register' class="form-horizontal" role="form" method="POST"  action="{{ url('/auth/register') }}">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-						<div class="form-group">
-							<label class="col-md-4 control-label">Name</label>
+						<div id='nickname' class="form-group has-feedback">
+							<label class="col-md-4 control-label">昵称</label>
 							<div class="col-md-6">
-								<input type="text" class="form-control" name="name" value="{{ old('name') }}">
+								<input type="text" class="form-control" name="nickname" placeholder='昵称(必填)'>
+								<span class='glyphicon glyphicon-ok form-control-feedback sr-only'></span>
+								<span class='glyphicon glyphicon-error form-control-feedback sr-only'></span>
 							</div>
 						</div>
 
-						<div class="form-group">
-							<label class="col-md-4 control-label">E-Mail Address</label>
+						<div id='email' class="form-group has-feedback">
+							<label class="col-md-4 control-label">邮箱</label>
 							<div class="col-md-6">
-								<input type="email" class="form-control" name="email" value="{{ old('email') }}">
+								<input type="email" class="form-control" name="email" placeholder='邮箱(必填)'>
+								<span class='glyphicon glyphicon-ok form-control-feedback sr-only'></span>
+								<span class='glyphicon glyphicon-error form-control-feedback sr-only'></span>
 							</div>
 						</div>
 
-						<div class="form-group">
-							<label class="col-md-4 control-label">Password</label>
+						<div id='password' class="form-group has-feedback">
+							<label class="col-md-4 control-label">密码</label>
 							<div class="col-md-6">
-								<input type="password" class="form-control" name="password">
+								<input type="password" class="form-control" name="password" placeholder='密码(必须)'>
+								<span class='glyphicon glyphicon-ok form-control-feedback sr-only'></span>
+								<span class='glyphicon glyphicon-error form-control-feedback sr-only'></span>
+
 							</div>
 						</div>
 
-						<div class="form-group">
-							<label class="col-md-4 control-label">Confirm Password</label>
+						<div id='confirmPassword' class="form-group has-feedback">
+							<label class="col-md-4 control-label">确认密码</label>
 							<div class="col-md-6">
-								<input type="password" class="form-control" name="password_confirmation">
+								<input type="password" class="form-control" name="confirmPassword" placeholder='确认密码'>
+								<span class='glyphicon glyphicon-ok form-control-feedback sr-only'></span>
+								<span class='glyphicon glyphicon-error form-control-feedback sr-only'></span>
+
 							</div>
 						</div>
 
 						<div class="form-group">
 							<div class="col-md-6 col-md-offset-4">
 								<button type="submit" class="btn btn-primary">
-									Register
+										注册
 								</button>
 							</div>
 						</div>
 					</form>
+					<?php }else {?>
+					<h3 class='text-center'>你已经登录!</h3>
+					<?php }?>
 				</div>
 			</div>
 		</div>
-	</div>
-</div>
 @endsection
