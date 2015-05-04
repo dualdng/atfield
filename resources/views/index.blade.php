@@ -171,6 +171,7 @@ AT.field | 首页
 								<h2 class='panel-title'>热门图片</h2>
 						</div>
 						<div class='panel-body'>
+<?php if(count($postC)>0){?>
 								<div class='col-md-3'>
 										<img src='<?php echo $postC[0]->imgUrl;?>'/>
 								</div>
@@ -182,6 +183,7 @@ AT.field | 首页
 										<?php }?>
 								</div>
 						</div>
+										<?php }?>
 				</div>
 		</div>
 		<script>
