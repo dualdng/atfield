@@ -165,6 +165,10 @@ article {
 .single {
 		margin-bottom:10px;
 }
+.single img {
+		max-width:100%;
+		overflow:hidden;
+}
 .singleComment {
 		margin:0 10px;
 		margin-bottom:10px;
