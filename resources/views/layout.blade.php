@@ -11,9 +11,9 @@
 				<meta charset='utf-8'/>
 				<meta name="csrf-token" content="{{ csrf_token() }}" /> <!-- laravel的放夸域请求验证 -->
 				<title>@yield('title')</title>
-				<meta name='description' content='What a beauty life!' />
-				<meta name='keywords' content='Brague,WordPress,Emlog,php' />
-				<meta name='author' content='Tinty' />
+				<meta name='description' content='AT.Field club|绝对领域' />
+				<meta name='keywords' content='绝对领域,过膝袜,大腿袜,足控,cosplay,人像摄影,动漫' />
+				<meta name='author' content='AT.Field' />
 				<link rel='shortcut icon' href='/favicon.ico'>
 				<!-- 新 Bootstrap 核心 CSS 文件 -->
 				<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
