@@ -3,7 +3,7 @@
 AT.field | 用户中心 
 @endsection
 @section('header')
-<div class='header container-fluid'>
+<div class='headerNarrow container-fluid'>
 </div>
 @endsection
 @section('content')

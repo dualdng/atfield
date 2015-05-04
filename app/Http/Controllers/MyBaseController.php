@@ -14,7 +14,7 @@ class MyBaseController extends Controller {
 				$pattern='/<img src[=\"a-z0-9:\.\/]*/';
 				$result=preg_match($pattern,$content,$match);
 				if($result==1) {
-						$pattern='/u[a-z0-9.\/]+/';
+						$pattern='/um[a-z0-9.\/]+/';
 						$result=preg_match($pattern,$match[0],$match);
 						if($result==1) {
 								return $match[0];
@@ -46,7 +46,7 @@ class MyBaseController extends Controller {
 			$temp=array();
 			if($result) {
 					foreach($match[0] as $value) {
-							$pattern='/u[a-z0-9.\/]+/';
+							$pattern='/um[a-z0-9.\/]+/';
 							$result=preg_match($pattern,$value,$matchB);
 							if($result==1){
 									$temp[]='/'.$matchB[0];
